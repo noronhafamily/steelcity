@@ -32,19 +32,19 @@
                 <button id="calculatorButton1" onclick="showAddItUp()">Add</button>
             </div>
             
-        
+        <br>
+        <br>
+        <br>
         </div>
         <div>
-            <br>
-            <button onclick="showMenu()">Back to Menu</button>
         </div>
-    </div>
+    
     <div>
         <div>
-            <input id="calculatorAddition1"/> + 
-            <input id="calculatorAddition2"/> = 
-            <input id="calculatorAdditionAnswer"/>
-            <button id="calculatorButton1" onclick="showAddItUp()">Add</button>
+            <input id="calculatorSubtraction1"/> - 
+            <input id="calculatorSubtraction2"/> = 
+            <input id="calculatorSubtractionAnswer"/>
+            <button id="calculatorButton2" onclick="showSubtractItUp()">Subtract</button>
         </div>
         
     
@@ -93,6 +93,38 @@
                 ' the answer is '+showAddItUp+'.');
             }
         }
+        function subtractItUp(){
+            var firstNumber2 = document.getElementById('calculatorSubtraction1').value;
+            var secondNumber2 = document.getElementById('calculatorSubtraction2').value;
+            var subtractItUpValue = Number(firstNumber2) + Number(secondNumber2);
+            console.log(subtractItUpValue);
+            return subtractItUpValue;
+        }
+
+        function showSubtractItUp(){
+            var showSubtractItUp = subtractItUp();
+            var calculatorSubtractionAnswer = document.getElementById("calculatorfunction addItUp(){
+            var firstNumber2 = document.getElementById('calculatorfunction addItUp(){
+            var firstNumber = document.getElementById('calculatorAddition1').value;
+            var secondNumber = document.getElementById('calculatorAddition2').value;
+            var addItUpValue = Number(firstNumber) + Number(secondNumber);
+            console.log(addItUpValue);
+            return addItUpValue;
+        }
+
+        function showAddItUp(){
+            var showAddItUp = addItUp();
+            var calculatorAdditionAnswer = document.getElementById("calculatorAdditionAnswer").value;
+            if (showAddItUp == calculatorAdditionAnswer){
+                alert('You got it! Great job!')
+        
+            }else{
+                alert('Oops, try again :( '+
+                ' Your guess of '+calculatorAdditionAnswer + ' is incorrect' +
+                ' the answer is '+showAddItUp+'.');
+            }
+        }
+        
         
     </script>
 </body>
