@@ -14,10 +14,10 @@
             <button type="button" id="buttonCalculator" onclick="doCalculator()">Calculator</button>
         </div>
         <div>
-            <button type="button" id="buttonAddition" onclick="doAddition()">Addition</button>
+            <button type="button" id="buttonAddition" onclick="showAddition()">Addition</button>
         </div>
         <div>
-            <button type="button" id="buttonSubtraction" onclick="doSubtraction()">Subtraction</button>
+            <button type="button" id="buttonSubtraction" onclick="showSubtraction()">Subtraction</button>
         </div>
     </div>
     <div id="calculator" style="display:none">
@@ -53,6 +53,23 @@
         <br>
         <button onclick="showMenu()">Back to Menu</button>
     </div>
+
+
+
+</div>
+<div id="additionTables" style="display:none">
+<img id="additionImage" src="./Addition.png">
+<div>
+    <br>
+    <button onclick="showMenu()">Back to Menu</button>
+</div>
+</div>
+<div id="subtractionTables" style="display:none">
+    <img id="subtractionImage" src="./Subtraction.png">
+    <div>
+        <br>
+        <button onclick="showMenu()">Back to Menu</button>
+    </div>
 </div>
     <script>
         function doCalculator(){
@@ -60,8 +77,20 @@
             show("#calculator");
         }
 
+        function showAddition(){
+            hide("#menu");
+            show("#additionTables");
+        }
+
+        function showSubtraction(){
+            hide("#menu")
+            show("#subtractionTables")
+        }
+
         function showMenu(){
             hide("#calculator")
+            hide("#additionTables")
+            hide("#subtractionTables")
             show("#menu")
         }
 
@@ -96,32 +125,32 @@
         function subtractItUp(){
             var firstNumber2 = document.getElementById('calculatorSubtraction1').value;
             var secondNumber2 = document.getElementById('calculatorSubtraction2').value;
-            var subtractItUpValue = Number(firstNumber2) + Number(secondNumber2);
+            var subtractItUpValue = Number(firstNumber2) - Number(secondNumber2);
             console.log(subtractItUpValue);
             return subtractItUpValue;
         }
 
-        function showSubtractItUp(){
-            var showSubtractItUp = subtractItUp();
-            var calculatorSubtractionAnswer = document.getElementById("calculatorfunction addItUp(){
-            var firstNumber2 = document.getElementById('calculatorfunction addItUp(){
-            var firstNumber = document.getElementById('calculatorAddition1').value;
-            var secondNumber = document.getElementById('calculatorAddition2').value;
-            var addItUpValue = Number(firstNumber) + Number(secondNumber);
-            console.log(addItUpValue);
-            return addItUpValue;
-        }
+        // function calculateSubtraction(){
+        //     var showSubtractItUp = subtractItUp();
+        //     var calculatorSubtractionAnswer = document.getElementById('calculatorfunction subtractItUp()');
+        //     var firstNumber2 = document.getElementById('calculatorfunction subtractItUp()');
+        //     var firstNumber2 = document.getElementById('calculatorSubtraction1').value;
+        //     var secondNumber2 = document.getElementById('calculatorSubtraction2').value;
+        //     var subtractItUpValue = Number(firstNumber2) - Number(secondNumber2);
+        //     console.log(subtractItUpValue);
+        //     return subtractItUpValue;
+        // }
 
-        function showAddItUp(){
-            var showAddItUp = addItUp();
-            var calculatorAdditionAnswer = document.getElementById("calculatorAdditionAnswer").value;
-            if (showAddItUp == calculatorAdditionAnswer){
+        function showSubtractItUp(){
+            var correctSubtractionAnswer = subtractItUp();
+            var calculatorSubtractionAnswer = document.getElementById("calculatorSubtractionAnswer").value;
+            if (correctSubtractionAnswer == calculatorSubtractionAnswer){
                 alert('You got it! Great job!')
         
             }else{
                 alert('Oops, try again :( '+
-                ' Your guess of '+calculatorAdditionAnswer + ' is incorrect' +
-                ' the answer is '+showAddItUp+'.');
+                ' Your guess of '+calculatorSubtractionAnswer + ' is incorrect' +
+                ' the answer is '+correctSubtractionAnswer+'.');
             }
         }
         
